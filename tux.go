@@ -7,18 +7,18 @@ import (
 	"github.com/uptrace/bunrouter"
 )
 
-type App struct {
+type Tux struct {
 	*bunrouter.Router
 	shutdown chan os.Signal
 }
 
-func NewApp(shutdown chan os.Signal) *App {
-	return &App{
+func New(c chan os.Signal) *Tux {
+	return &Tux{
 		Router:   bunrouter.New(),
-		shutdown: shutdown,
+		shutdown: c,
 	}
 }
 
-func (a *App) SignalShutdown() {
-	a.shutdown <- syscall.SIGTERM
+func (t *Tux) Finish() {
+	t.shutdown <- syscall.SIGTERM
 }

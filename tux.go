@@ -39,7 +39,7 @@ func (t *Tux) AddRoute(verb string, group string, path string, rf RouteFunc) {
 
 	}
 
-	team := t.NewGroup(group)
+	team := t.NewGroup("/" + group)
 
 	switch verb {
 	case http.MethodGet:

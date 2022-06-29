@@ -1,0 +1,6 @@
+# github.com/google/uuid v1.3.0
+## explicit
+github.com/google/uuid
+# github.com/uptrace/bunrouter v1.0.17
+## explicit; go 1.17
+github.com/uptrace/bunrouter

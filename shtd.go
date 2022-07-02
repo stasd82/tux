@@ -15,6 +15,6 @@ func (s *shutdownError) Error() string {
 }
 
 func IsShutdown(err error) bool {
-	var se shutdownError
-	return errors.Is(err, &se)
+	var se *shutdownError
+	return errors.As(err, &se)
 }
